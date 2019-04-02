@@ -27,22 +27,27 @@ What problems did I have that I wanted to solve?
 
 |#| Container Name|docker?| Ver    | Some Details
 |-|---------------|-------|--------|--------------
-|a|iotp_dig2      |y      | v0.0.7 |Required, 'almost' a generic framework. The registry, broker, shadow, rules engine.
+|a|iotp_dig2      |y      | v0.0.6 |Required, 'almost' a generic framework. The registry, broker, shadow, rules engine.
 |b|iotp_dig2Msgr  |y      | v0.0.1 |A subscribe-based messenger and bot with which to interact with the IoT shadow.
 |c|iotp_coachdb   |y      | -      | a No-SQL db underlying the events, if history of the events are required for further analysis.
-|d|iotp_HomeKit   |y      | v0.0.9 |Less of a framework to run Apple's HomeKit.
+|d|iotp_HomeKit   |y      | v0.0.7 |Less of a framework to run Apple's HomeKit.
 |e|iotp_mqtt      |y      | v1.0.0 |A broker.
 |f|menu_ansible   |not yet| v0.0.5 |A menu system with which to drive Ansible, which which the management of the system is done.
+
+### Node-RED flows
+|#| Node-RED Flows required |In Container|
+|-|-------------------------|------------|
+|1|node-red-dashboard       |a|
 
 ### Installation Pre-Requisites
 
 |#|Pre-Req | Containers|a|b|c|d|e|
 |-|--------|-----------|-|-|-|-|-|
-|a|Ansible |           |y|y|y|y|y|
-|b|Docker  |           |y|y|y|y|y|
-|c|github  |           |y|y|y|y|y|
-|d|Node-RED|           |y|y|n|y|y|
-|e|Telegram|           |n|y|n|n|n|  
+|1|Ansible |           |y|y|y|y|y|
+|2|Docker  |           |y|y|y|y|y|
+|3|github  |           |y|y|y|y|y|
+|4|Node-RED|           |y|y|n|y|y|
+|5|Telegram|           |n|y|n|n|n|  
 
 ### a. Building Block: iotp_dig2
 
