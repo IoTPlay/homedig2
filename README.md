@@ -38,16 +38,49 @@ What problems did I have that I wanted to solve?
 
 ```
 1. Application Settings:   
-    a. Registry
-    b. Rules
-    b. Settings
+   a. Registry
+   b. Rules
+   c. Config settings
+
 2. In-Memory Settings Lists
-    a. Things Registry
-    b. Things Shadow  
-    c. Others
-3. A Broker
-4. A Rules engine
-5. An IoT thing event generation tool for testing.
+   a. Things Registry
+   b. Things Shadow  
+   c. Others
+
+3. Broker:
+   a. to dig2, from controllers:
+      i. Shelly
+     ii. espeasy
+   b. to controllers, from:
+      i. HomeKit
+     ii. dig2Msgr (not impl.)
+
+4. Events Engine:
+   a. Prime the Lists:
+      i. Registry & Shadow lists
+     ii. Display list
+   b. Maintain in-memory lists (prune)
+   c. On Event arrival:
+      i. Update Shadow on Events
+     ii. Update Thing events list
+   d. Thing inter-Event calculations (DEPRECATED)
+
+5. Rules Engine:
+   a. Define Rules (yaml)
+   b. Apply rule to event
+   c. Update Shadow
+   d. Make actions available to other platforms
+
+6. Web Admin Interface:
+   a. Things Registry & Controllers
+   b. Things Shadow
+   c. Things Status. Events, Totals  
+   d. Setup.
+      i. Severity Grading
+     ii. Action Types
+    iii. Severity Mapping Rules
+
+7. Testbed. Trigger test events.
 ```
 
 ### Installation Pre-Requisites
