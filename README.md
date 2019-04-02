@@ -92,3 +92,7 @@ What problems did I have that I wanted to solve?
 
 7. Testbed. Trigger test events.
 ```
+
+## Maintenance Status
+
+Find a Trello board with the dev pipeline. [Trello IoTP dig2 Invite](https://trello.com/invite/b/yC1CnUMK/f45c720766ca0d44e7c28e3c00375494/iotp-dig2).
