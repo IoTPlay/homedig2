@@ -52,9 +52,9 @@ What problems did I have that I wanted to solve?
 
 ### Installation Pre-Requisites
 
-|#|Pre-Req | Containers|a|b|c|d|e
-|-|--------|-----------|
-|a|Ansible |           |y|y|y|y|y
-|b|Docker  |           |y|y|y|y|y
+|#|Pre-Req | Containers|a|b|c|d|e|
+|-|--------|-----------|-|-|-|-|-|
+|a|Ansible |           |y|y|y|y|y|
+|b|Docker  |           |y|y|y|y|y|
 |c|github  |           |y|y|y|y|y|  
 |d|Telegram|           |n|y|n|n|n|  
