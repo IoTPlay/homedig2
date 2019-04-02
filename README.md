@@ -2,18 +2,20 @@
 
 A digital Twin framework for running IoT devices.
 
-## What is it?
-IoTPlay's 'Digital Twin' for running the full life-cycle of a framework for the life-cycle of managing IoT devices The implementation is on Node-Red, with extensive use of Docker, the author runs this on Raspberry Pi's.
-
 ## Maintainer
 Jéan Roux, <jean@iotplay.org>
 
-## Why?
+## What, Why, Used for what, and Inspiration
+
+### What is it?
+IoTPlay's 'Digital Twin' for running the full life-cycle of a framework for the life-cycle of managing IoT devices The implementation is on Node-Red, with extensive use of Docker, the author runs this on Raspberry Pi's.
+
+### Why?
 
 **YAIOTF ?** Yet another IoT Framework? What else were my options?
 What problems did I have that I wanted to solve?
 
-## Inspiration
+### Inspiration
 
     a. Running a Home Automation system for 3 yrs, and discovering the issues of implementing, and maintaining the system.  
     b. Amazon Web Services IoT Framework.  
