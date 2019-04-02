@@ -34,6 +34,16 @@ What problems did I have that I wanted to solve?
 |e|iotp_mqtt      |y      | v1.0.0 |A broker.
 |f|menu_ansible   |not yet| v0.0.5 |A menu system with which to drive Ansible, which which the management of the system is done.
 
+### Installation Pre-Requisites
+
+|#|Pre-Req | Containers|a|b|c|d|e|
+|-|--------|-----------|-|-|-|-|-|
+|a|Ansible |           |y|y|y|y|y|
+|b|Docker  |           |y|y|y|y|y|
+|c|github  |           |y|y|y|y|y|
+|d|Node-RED|           |y|y|n|y|y|
+|e|Telegram|           |n|y|n|n|n|  
+
 ### a. Building Block: iotp_dig2
 
 ```
@@ -82,12 +92,3 @@ What problems did I have that I wanted to solve?
 
 7. Testbed. Trigger test events.
 ```
-
-### Installation Pre-Requisites
-
-|#|Pre-Req | Containers|a|b|c|d|e|
-|-|--------|-----------|-|-|-|-|-|
-|a|Ansible |           |y|y|y|y|y|
-|b|Docker  |           |y|y|y|y|y|
-|c|github  |           |y|y|y|y|y|  
-|d|Telegram|           |n|y|n|n|n|  
