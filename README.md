@@ -23,7 +23,7 @@ What problems did I have that I wanted to solve?
 
 ## Building Blocks
 
-### Docker Containers of iotp_dig2
+### Docker Containers of iotp_dig2  
 
 |#| Container Name|docker?| Ver    | Some Details
 |-|---------------|-------|--------|--------------
@@ -56,5 +56,5 @@ What problems did I have that I wanted to solve?
 |-|--------|-----------|
 |a|Ansible |           |y|y|y|y|y
 |b|Docker  |           |y|y|y|y|y
-|c|github
-|d|Telegram
+|c|github  |           |y|y|y|y|y|  
+|d|Telegram|           |n|y|n|n|n|  
