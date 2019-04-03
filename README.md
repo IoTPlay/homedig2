@@ -20,7 +20,7 @@ What problems did I have that I wanted to solve?
     a. Running a Home Automation system for 3 yrs, and discovering the issues of implementing, and maintaining the system.  
     b. Amazon Web Services IoT Framework.  
     c. SAP's Leonardo IoT framework
-    d. Efforts by different parties to standardize, like (homie)[https://homieiot.github.io]
+    d. Efforts by different parties to standardize, like Homie.
     e. The inner workings of MQTT.
 
 ## Building Blocks
@@ -100,6 +100,62 @@ What problems did I have that I wanted to solve?
 7. Testbed. Trigger test events.
 ```
 
+## Building Block Examples
+
+### 1.a. Registry in YAML example
+
+```
+- regId:      Irr-1
+  name:       Irrigation
+  valueName:  Leg 1
+  loc:        Garden
+  NSEW:       S
+  ReadOnly:   false
+  IsDepl:     1
+  Controller: ESP62
+  type:       Switch
+  Sensor:     Relay
+  CntrDef:
+    TaskNo: 5
+    GPIO:   15
+  mqtt_topics:
+    to:     "/ESP62/cmd"
+    from:   "espeasy/ESP62/Switch/Relay1"
+  valType:
+    "0" : Off
+    "1" : On
+  HomeKit:
+    service: Valve
+    val:     Active
+  comments:   "-"
+```
+### 1.b. Rules in YAML example
+
+```
+- ruleId: ahq01
+  desc: "val < 3% humidity in Quad for longer than 12hrs"
+  # Could mean that the sensor is broken
+  isActive: 0
+  thingMatch:
+    name:       Air
+    valueName:  Humidity
+    loc:        Quad
+  conditionMatch:
+    val: 3
+    minutes: 6 # change back to 720
+    operation: "<"
+  severity: 3
+```
+
 ## Maintenance Status
 
+### Trello Kanban board
 Find a Trello board with the dev pipeline. [Trello IoTP dig2 Invite](https://trello.com/invite/b/yC1CnUMK/f45c720766ca0d44e7c28e3c00375494/iotp-dig2).
+
+### Outstanding for Next releases
+1. Self-Discovery of Devices & Things.
+  We will use the Homie mqtt self-discovery standard. [Homie - An MQTT Convention for IoT/M2M](https://homieiot.github.io).
+
+2. **dig2Msgr** using Telegram not completed yet.
+
+3. Rules Engine not completed yet.
