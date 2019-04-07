@@ -12,8 +12,8 @@ IoTPlay's 'Digital Twin' for running the full life-cycle of a framework for the 
 
 ### Why?
 
-**YAIOTF ?** Yet another IoT Framework? What else were my options?
-What problems did I have that I wanted to solve?
+**YAIOTF ?** Yet another IoT Framework? What else were my options? What problems did I have that I wanted to solve?
+(to be completed)
 
 ### Inspiration
 
@@ -147,6 +147,22 @@ What problems did I have that I wanted to solve?
   severity: 3
 ```
 
+## Instructions for Pub-Sub between dig2 Services.
+
+|# | From            | To              |Example mqtt Topic            |Data Payload Ex.    | Description          |
+|--|---------------- |-----------------|------------------------------|--------------------|----------------------|
+|1a|Device - Light   |iotp_dig2.Broker |espeasy/ESP70/Light/Switch    |"1"                 |Info from device      |
+|1b|Device - Gate    |iotp_dig2.Broker |espeasy/ESP66/CurrentDoorState|"1"                 |   "                  |
+|2a|iotp_dig2.Broker |Device - Light   |/ESP70/gpio/12                |"1"                 |Instructions to Device|
+|2b|iotp_dig2.Broker |Device - Gate    |/ESP66/cmd                    |"TargetDoorState_0" |   "                  |
+|||||||
+|3 |iotp_dig2.Broker |iotp_dig2.Twin   |Internal flow to flow|{"regId": "Irr-1", "val": val, "timestamp": jstime}||
+|4 |iotp_dig2.Twin   |iotp_HomeKit     |rhm_homekit/LightBulb/Lig-1   |{"On":1}            |  |
+|5 |iotp_HomeKit     |iotp_dig2.Broker |rhm_homekit/command/Irr-1     |{event:"L1"}        |  |
+|||||||
+|6 |iotp_dig2.Twin   |iotp_dig2Msgr    |Still to be done.|||
+
+
 ## Maintenance Status
 
 ### Trello Kanban board
@@ -158,4 +174,6 @@ Find a Trello board with the dev pipeline. [Trello IoTP dig2 Invite](https://tre
 
 2. **dig2Msgr** using Telegram not completed yet.
 
-3. Rules Engine not completed yet.
+3. **Rules Engine** not completed yet.
+
+4. **Registry yaml** - in HomeKit - the `service` must be an array of required services, not just one service.
