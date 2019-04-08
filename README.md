@@ -147,6 +147,30 @@ IoTPlay's 'Digital Twin' for running the full life-cycle of a framework for the 
   severity: 3
 ```
 
+### 3.a. The dig2 iotp Protocol
+
+All events from the Controllers & Devices are translated to the **'dig2 iotp Protocol'**, which looks as follows:   
+
+```
+{"regId": regId, "val": val, "timestamp": jstime}
+```
+  - The `regId` json key is the key with which other values can be looked up in the `Registry`.  
+  - Value - `val` - in it's simplest form:   
+
+  - The json key `val` is the value which then corresponds to the `valType`'s in the `Registry`, for instance:   
+    0 - Off   
+    1 - On
+  - It represents the simplest feedback a device can give, like temperature value, or open / close status, etc.   
+
+- Value - `val` in it's json object form, it looks like this:
+```
+{"regId": regId, "val": {ValTypeClass1:{"0":"open","1":"closed"},ValTypeClass2:{"0":"something1","1":"something2"}}, "timestamp": jstime}   
+```   
+  - This is used if one device needs to send back more than one value, like `{CurrentDoorState, TargetDoorState}`.   
+  - The **'dig2 iotp Protocol'** would then look like the following:  
+
+
+
 ## Instructions for Pub-Sub between dig2 Services.
 
 |# | From            | To              |Example mqtt Topic            |Data Payload Ex.    | Description          |
@@ -157,8 +181,8 @@ IoTPlay's 'Digital Twin' for running the full life-cycle of a framework for the 
 |2b|iotp_dig2.Broker |Device - Gate    |/ESP66/cmd                    |"TargetDoorState_0" |   "                  |
 |||||||
 |3 |iotp_dig2.Broker |iotp_dig2.Twin   |Internal flow to flow|{"regId": "Irr-1", "val": val, "timestamp": jstime}||
-|4 |iotp_dig2.Twin   |iotp_HomeKit     |rhm_homekit/LightBulb/Lig-1   |{"On":1}            |  |
-|5 |iotp_HomeKit     |iotp_dig2.Broker |rhm_homekit/command/Irr-1     |{event:"L1"}        |  |
+|4 |iotp_dig2.Twin   |iotp_HomeKit     |iotpHomeKit/LightBulb/Lig-1   |{"On":1}            |  |
+|5 |iotp_HomeKit     |iotp_dig2.Broker |iotpHomeKit/command/Irr-1     |{event:"L1"}        |then back to 2a, b.  |
 |||||||
 |6 |iotp_dig2.Twin   |iotp_dig2Msgr    |Still to be done.|||
 
@@ -177,3 +201,5 @@ Find a Trello board with the dev pipeline. [Trello IoTP dig2 Invite](https://tre
 3. **Rules Engine** not completed yet.
 
 4. **Registry yaml** - in HomeKit - the `service` must be an array of required services, not just one service.
+
+5. Make it **Multi Client** so that the same framework can be hosted centrally for different clients?
