@@ -25,6 +25,10 @@ IoTPlay's 'Digital Twin' for running the full life-cycle of a framework for the 
 
 ## Building Blocks
 
+See the architecture below:
+
+![The dig2 Architecture](images/dig2_Architecture.png)
+
 ### Docker Containers of iotp_dig2  
 
 |#| Container Name|docker?| Ver    | Some Details
@@ -164,7 +168,8 @@ All events from the Controllers & Devices are translated to the **'dig2 iotp Pro
 
 - Value - `val` in it's json object form, it looks like this:
 ```
-{"regId": regId, "val": {ValTypeClass1:{"0":"open","1":"closed"},
+{"regId": regId, "val":
+{ValTypeClass1:{"0":"open","1":"closed"},
 ValTypeClass2:{"0":"something1","1":"something2"}}, "timestamp": jstime}   
 ```   
   - This is used if one device needs to send back more than one value, like `{CurrentDoorState, TargetDoorState}`.   
@@ -186,6 +191,20 @@ ValTypeClass2:{"0":"something1","1":"something2"}}, "timestamp": jstime}
 |5 |iotp_HomeKit     |iotp_dig2.Broker |iotpHomeKit/command/Irr-1     |{event:"L1"}        |then back to 2a, b.  |
 |||||||
 |6 |iotp_dig2.Twin   |iotp_dig2Msgr    |Still to be done.|||
+
+
+## Advise for Edge Processing
+To be completed. Here we add how to setup in ESPEasy & others for dig2 to work.
+
+- ESPEasy:
+  - To add time to the json object, use **%unixtime%**, remember to x 1000 when the value comes in, to be a JS timestamp object.
+  - For instance, to pubish to mqtt from ESP Rules:   
+
+    ```
+    Publish iotpDig2,{regId:"Gat-1",
+                      val:{CurrentDoorState:1},
+                      timestamp:%unixtime%}
+    ```
 
 
 ## Maintenance Status
