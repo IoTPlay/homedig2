@@ -135,6 +135,48 @@ See the architecture below:
     val:     Active
   comments:   "-"
 ```
+
+Or, the `ValType json` object version:
+<details>
+    <summary>Click to expand!</summary>
+
+
+```
+    - regId:      Gat-2
+      name:       Gate
+      valueName:  DoorState
+      loc:        Outside
+      NSEW:       SW
+      ReadOnly:   false
+      IsDepl:     1
+      Controller: ESP66
+      type:       Switch
+      Sensor:     Relay
+      CntrDef:
+        TaskNo: "?"
+        GPIO:   "?"
+      mqtt_topics:
+        to:   "/ESP66/cmd"
+        from: "espeasy/ESP66/DoorState"
+      valType:
+        TargetDoorState:
+          "0" : Open
+          "1" : Closed
+        CurrentDoorState:
+          "0" : Open
+          "1" : Closed
+          "2" : Opening
+          "3" : Closing
+          "4" : Stopped
+      HomeKit:
+        service: GarageDoorOpener
+        val:     TargetDoorState
+      comments:
+```
+
+</details>
+
+
 ### 1.b. Rules in YAML example
 
 ```
