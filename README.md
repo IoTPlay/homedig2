@@ -164,7 +164,8 @@ All events from the Controllers & Devices are translated to the **'dig2 iotp Pro
 
 - Value - `val` in it's json object form, it looks like this:
 ```
-{"regId": regId, "val": {ValTypeClass1:{"0":"open","1":"closed"},ValTypeClass2:{"0":"something1","1":"something2"}}, "timestamp": jstime}   
+{"regId": regId, "val": {ValTypeClass1:{"0":"open","1":"closed"},
+ValTypeClass2:{"0":"something1","1":"something2"}}, "timestamp": jstime}   
 ```   
   - This is used if one device needs to send back more than one value, like `{CurrentDoorState, TargetDoorState}`.   
   - The **'dig2 iotp Protocol'** would then look like the following:  
