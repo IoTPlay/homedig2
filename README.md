@@ -69,12 +69,14 @@ See the architecture below:
    c. Others
 
 3. Broker:
-   a. to dig2, from controllers:
+   a. to dig2, from controllers (Using the `dig2 iotp` protocol):
       i. Shelly
      ii. espeasy
    b. to controllers, from:
       i. HomeKit
      ii. dig2Msgr (not impl.)
+   c. to HomeKit, from dig2 (Using the digsHomeKit protocol):
+   d. to CoachDB, from dig2
 
 4. Events Engine:
    a. Prime the Lists:
@@ -156,17 +158,17 @@ See the architecture below:
 All events from the Controllers & Devices are translated to the **'dig2 iotp Protocol'**, which looks as follows:   
 
 ```
-{"regId": regId, "val": val, "timestamp": jstime}
+{"regId": regId, "timestamp": jstime, "val": val}
 ```
   - The `regId` json key is the key with which other values can be looked up in the `Registry`.  
-  - Value - `val` - in it's simplest form:   
+  - Value - `val` - in it's **simplest** form:   
 
   - The json key `val` is the value which then corresponds to the `valType`'s in the `Registry`, for instance:   
     0 - Off   
     1 - On
   - It represents the simplest feedback a device can give, like temperature value, or open / close status, etc.   
 
-- Value - `val` in it's json object form, it looks like this:
+- Value - `val` in it's **json object** form, it looks like this:
 ```
 {"regId": regId, "val":
 {ValTypeClass1:{"0":"open","1":"closed"},
@@ -175,6 +177,15 @@ ValTypeClass2:{"0":"something1","1":"something2"}}, "timestamp": jstime}
   - This is used if one device needs to send back more than one value, like `{CurrentDoorState, TargetDoorState}`.   
   - The **'dig2 iotp Protocol'** would then look like the following:  
 
+### 3.c. The dig2HomeKit Protocol
+
+In order to standardise the messages going to the Node-RED HomeKit instance, a standard `from dig2` to `dig2 HomeKit` is required:
+
+```
+{"topic"   : 'iotpHomeKit/' + HomeKit.service + '/' + regId,
+ "payload" : {"val": val} }
+```
+or, as per above **'dig2 iotp Protocol'**, the payload can be in the **json object** form.
 
 
 ## Instructions for Pub-Sub between dig2 Services.
