@@ -1,18 +1,12 @@
 # iotp_dig2
 
-A digital Twin framework for running IoT devices.
+A framework which creates a 'digital twin' representation of a home, and reduces the complexities of running the full solution.
 
-## Maintainer
-Jéan Roux, <jean@iotplay.org>
+## Why, Used for what, and Inspiration
 
-## What, Why, Used for what, and Inspiration
+### Why this Approach
 
-### What is it?
-IoTPlay's 'Digital Twin' for running the full life-cycle of a framework for the life-cycle of managing IoT devices The implementation is on Node-Red, with extensive use of Docker, the author runs this on Raspberry Pi's.
-
-### Why and Requirements for a New Approach
-
-Why **YAIOTF ?** (Yet another IoT Framework?). What problems did I have that I wanted to solve? What else were our options? Well, after running some automation for three years, which also ran on Node-RED, with ESP8266's and MQTT, with a front-end on Node-RED Dashboard, maintaining the systems became more complex. Several friends asked for systems as well. After the initial 2 yrs of having stats about our home at our fingertips, the wow-factor wore off, and only the value-adds remained. We also realised that voice commands, or a message-based interface where one can subscribe to only those messages that suites us, is useful. We also realised that to maintain an IoT system, using Node-RED, means that if you do fault-finding with different configurations will take a lot of time.
+Why **YAIOTF ?** (Yet another IoT Framework?). What problems did I have that I wanted to solve? What else were our options? Well, after running automation of a home for three years, which also ran on Node-RED, with ESP8266's and MQTT, with a front-end on Node-RED Dashboard, maintaining the systems became more complex. Several friends asked for systems as well. After the initial 2 yrs of having stats about our home at our fingertips, the wow-factor wore off, and only the value-adds remained. We also realised that voice commands, or a message-based interface where one can subscribe to only those messages that suites us, is useful. We also realised that to maintain an IoT system, using Node-RED, means that if you do fault-finding with different configurations will take a lot of time.
 
 We then started looking at what was commercially available, not only for Home Automation, but since we were involved in other IoT solutions, were looking for what others did to solve similar. In the home automation space, we could have gone with pre-built apps only, like `Apple's HomeKit`, `Home Assistant`, Google Home, and others. We liked the flexibility of Node-RED, and saw that there is place to use both, own config, with for instance HomeKit. We like the Home Assistant way to configure new services, the standard of Homie for discovery. We also looked at the following:
 
@@ -291,6 +285,9 @@ To be completed. Here we add how to setup in ESPEasy & others for dig2 to work.
 
 
 ## Maintenance Status
+
+### Maintainer
+Jéan Roux, <jean@iotplay.org>
 
 ### Trello Kanban board
 Find a Trello board with the dev pipeline. [Trello IoTP dig2 Invite](https://trello.com/invite/b/yC1CnUMK/f45c720766ca0d44e7c28e3c00375494/iotp-dig2).
