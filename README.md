@@ -15,6 +15,8 @@ We then started looking at what was commercially available, not only for Home Au
   3. Efforts by different parties to standardize, like Homie.
   4. The inner workings of MQTT, specially the retained flag.
 
+### Framework Needs
+
 After looking at the above, specially the `Shadow` tooling and `Registry` in AWS IoT Framework, on how it used MQTT topics to delineate and keep state, we got inspired.... Broadly, our requirements list were then drawn up:
 
 
