@@ -4,7 +4,7 @@ A framework which creates a 'digital twin' representation of a home, and reduces
 
 ## A. Why, Used for what, and Inspiration
 
-### Why this Approach
+### A1. Why this Approach
 
 Why **YAIOTF ?** (Yet another IoT Framework?). What problems did I have that I wanted to solve? What else were our options? Well, after running automation of a home for three years, which also ran on Node-RED, with ESP8266's and MQTT, with a front-end on Node-RED Dashboard, maintaining the systems became more complex. Several friends asked for systems as well. After the initial 2 yrs of having stats about our home at our fingertips, the wow-factor wore off, and only the value-adds remained. We also realised that voice commands, or a message-based interface where one can subscribe to only those messages that suites us, is useful. We also realised that to maintain an IoT system, using Node-RED, means that if you do fault-finding with different configurations will take a lot of time.
 
@@ -15,7 +15,7 @@ We then started looking at what was commercially available, not only for Home Au
   3. Efforts by different parties to standardize, like Homie.
   4. The inner workings of MQTT, specially the retained flag.
 
-### Framework Needs
+### A2. Framework Needs
 
 After looking at the above, specially the `Shadow` tooling and `Registry` in AWS IoT Framework, on how it used MQTT topics to delineate and keep state, we got inspired.... Broadly, our requirements list were then drawn up:
 
@@ -43,7 +43,8 @@ See the architecture below:
 ![The dig2 Architecture](images/dig2_Architecture.png)
 
 
-### Building Block functions of iotp_dig2
+
+### B1. Building Block functions of iotp_dig2
 
 <details>
     <summary>Expand for the The iotp_dig2 function Building blocks. </summary>
@@ -98,7 +99,7 @@ See the architecture below:
 ```
 </details>
 
-### Building Block Examples
+### B2. Building Block Examples
 
 #### 1.a. Registry in YAML example
 
@@ -265,7 +266,7 @@ Meaning of Columns with which to define a severity rule:
 <details>
     <summary>Expand for installation advice</summary>
 
-### Docker Containers of iotp_dig2  
+### C1. Docker Containers of iotp_dig2  
 
 |#| Container Name|docker?| Ver    | Some Details
 |-|---------------|-------|--------|--------------
@@ -276,12 +277,12 @@ Meaning of Columns with which to define a severity rule:
 |e|iotp_mqtt      |y      | v1.0.0 |A broker.
 |f|menu_ansible   |not yet| v0.0.5 |A menu system with which to drive Ansible, which which the management of the system is done.
 
-### Node-RED flows
+### C2. Node-RED flows
 |#| Node-RED Flows required |In Container|
 |-|-------------------------|------------|
 |1|node-red-dashboard       |a|
 
-### Installation Pre-Requisites
+### C3. Installation Pre-Requisites
 
 |#|Pre-Req | Containers|a|b|c|d|e|
 |-|--------|-----------|-|-|-|-|-|
@@ -296,7 +297,7 @@ Meaning of Columns with which to define a severity rule:
 ## D. Deeper Understanding
 
 
-### Instructions for Pub-Sub between dig2 Services.
+### D1. Instructions for Pub-Sub between dig2 Services.
 
 <details>
     <summary>Expand for examples of Pub-Sub services</summary>
@@ -318,7 +319,7 @@ Meaning of Columns with which to define a severity rule:
 
 </details>
 
-### Advise for Edge Processing
+### D2. Advise for Edge Processing
 To be completed. Here we add how to setup in ESPEasy & others for dig2 to work.
 
 <details>
@@ -340,13 +341,10 @@ To be completed. Here we add how to setup in ESPEasy & others for dig2 to work.
 
 ## E. Maintenance Status
 
-### Maintainer
-Jéan Roux, <jean@iotplay.org>
+### E1. Maintainer
+Jéan Roux, <jean@iotplay.org>. Find a Trello board with the dev pipeline. [Trello IoTP dig2 Invite](https://trello.com/invite/b/yC1CnUMK/f45c720766ca0d44e7c28e3c00375494/iotp-dig2).
 
-### Trello Kanban board
-Find a Trello board with the dev pipeline. [Trello IoTP dig2 Invite](https://trello.com/invite/b/yC1CnUMK/f45c720766ca0d44e7c28e3c00375494/iotp-dig2).
-
-### Outstanding for Next releases
+### E2. Big-ticket items & Outstanding for Next releases
 1. Self-Discovery of Devices & Things.
   We will use the Homie mqtt self-discovery standard. [Homie - An MQTT Convention for IoT/M2M](https://homieiot.github.io).
 
