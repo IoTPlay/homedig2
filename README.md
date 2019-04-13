@@ -2,7 +2,7 @@
 
 A framework which creates a 'digital twin' representation of a home, and reduces the complexities of running the full solution.
 
-## Why, Used for what, and Inspiration
+## A. Why, Used for what, and Inspiration
 
 ### Why this Approach
 
@@ -19,6 +19,8 @@ We then started looking at what was commercially available, not only for Home Au
 
 After looking at the above, specially the `Shadow` tooling and `Registry` in AWS IoT Framework, on how it used MQTT topics to delineate and keep state, we got inspired.... Broadly, our requirements list were then drawn up:
 
+<details>
+    <summary>Expand for the Needs we built the Framework on.</summary>
 
 |#| Requirement Description |Req. Name|  
 |-|-------------------------|-------------------  
@@ -32,39 +34,19 @@ After looking at the above, specially the `Shadow` tooling and `Registry` in AWS
 
 Other solutions can now be 'plugged-in' as well, we are working on a `Messenger` container.
 
-## Building Blocks
+</details>
+
+## B. Architecture & Building Blocks
 
 See the architecture below:
 
 ![The dig2 Architecture](images/dig2_Architecture.png)
 
-### Docker Containers of iotp_dig2  
 
-|#| Container Name|docker?| Ver    | Some Details
-|-|---------------|-------|--------|--------------
-|a|iotp_dig2      |y      | v0.0.6 |Required, 'almost' a generic framework. The registry, broker, shadow, rules engine.
-|b|iotp_dig2Msgr  |y      | v0.0.1 |A subscribe-based messenger and bot with which to interact with the IoT shadow.
-|c|iotp_coachdb   |y      | -      | a No-SQL db underlying the events, if history of the events are required for further analysis.
-|d|iotp_HomeKit   |y      | v0.0.7 |Less of a framework to run Apple's HomeKit.
-|e|iotp_mqtt      |y      | v1.0.0 |A broker.
-|f|menu_ansible   |not yet| v0.0.5 |A menu system with which to drive Ansible, which which the management of the system is done.
+### Building Block functions of iotp_dig2
 
-### Node-RED flows
-|#| Node-RED Flows required |In Container|
-|-|-------------------------|------------|
-|1|node-red-dashboard       |a|
-
-### Installation Pre-Requisites
-
-|#|Pre-Req | Containers|a|b|c|d|e|
-|-|--------|-----------|-|-|-|-|-|
-|1|Ansible |           |y|y|y|y|y|
-|2|Docker  |           |y|y|y|y|y|
-|3|github  |           |y|y|y|y|y|
-|4|Node-RED|           |y|y|n|y|y|
-|5|Telegram|           |n|y|n|n|n|  
-
-### a. Building Block: iotp_dig2
+<details>
+    <summary>Expand for the The iotp_dig2 function Building blocks. </summary>
 
 ```
 1. Application Settings:   
@@ -114,10 +96,11 @@ See the architecture below:
 
 7. Testbed. Trigger test events.
 ```
+</details>
 
-## Building Block Examples
+### Building Block Examples
 
-### 1.a. Registry in YAML example
+#### 1.a. Registry in YAML example
 
 ```
 - regId:      Irr-1
@@ -185,15 +168,19 @@ Or, the `ValType json` object version:
 
 </details>
 
-### 1.b. Rules Severity classes, and Settings
+#### 1.b. Rules Severity classes, and Settings
 
-Severity & Action Types  
+<details>
+    <summary>Expand for the Severity & Action Types. </summary>
 
-    ![Severity & Action Types](images/dig2_Severity+ActionTypes.png)
+![Severity & Action Types](images/dig2_Severity+ActionTypes.png)
 
+</details>
 
+#### 3.a. The dig2.iotp Protocol
 
-### 3.a. The dig2 iotp Protocol
+<details>
+    <summary>Expand for the dig2.iotp Protocol</summary>
 
 All events from the Controllers & Devices are translated to the **'dig2 iotp Protocol'**, which looks as follows:   
 
@@ -217,7 +204,12 @@ ValTypeClass2:{"0":"something1","1":"something2"}}, "timestamp": jstime}
   - This is used if one device needs to send back more than one value, like `{CurrentDoorState, TargetDoorState}`.   
   - The **'dig2 iotp Protocol'** would then look like the following:  
 
-### 3.c. The dig2HomeKit Protocol
+</details>
+
+#### 3.c. The dig2.HomeKit Protocol
+
+<details>
+    <summary>Expand for the dig2.HomeKit protocol. </summary>
 
 In order to standardise the messages going to the Node-RED HomeKit instance, a standard `from dig2` to `dig2 HomeKit` is required:
 
@@ -227,9 +219,19 @@ In order to standardise the messages going to the Node-RED HomeKit instance, a s
 ```
 or, as per above **'dig2 iotp Protocol'**, the payload can be in the **json object** form.
 
-### The Rules Engine  
+</details>
 
-#### 5.a. Rules in YAML example
+#### The Rules Engine  
+
+##### 5.a. Rules in YAML example
+
+<details>
+    <summary>Expand for the dig2.Rules Engine</summary>
+
+Find below an example of a rule in yaml, a list of rules as example, and the meaning of the columns of the rules defined in yaml.
+
+
+###### yaml rule
 
 ```
 - ruleId: ahq01
@@ -247,7 +249,7 @@ or, as per above **'dig2 iotp Protocol'**, the payload can be in the **json obje
   severity: 3
 ```
 
-Example of Type of Severity Mapping Rules possible (above is row 1):
+###### Example of Type of Severity Mapping Rules possible (above is row 1):
 
 ![Severity Mapping Rules](images/dig2_SeverityMappingRules.png)
 
@@ -255,8 +257,50 @@ Meaning of Columns with which to define a severity rule:
 
 ![Severity Rules Description](images/dig2_SevirityRulesDescription.png)
 
+</details>
 
-## Instructions for Pub-Sub between dig2 Services.
+
+## C. Installation Advise
+
+<details>
+    <summary>Expand for installation advice</summary>
+
+### Docker Containers of iotp_dig2  
+
+|#| Container Name|docker?| Ver    | Some Details
+|-|---------------|-------|--------|--------------
+|a|iotp_dig2      |y      | v0.0.6 |Required, 'almost' a generic framework. The registry, broker, shadow, rules engine.
+|b|iotp_dig2Msgr  |y      | v0.0.1 |A subscribe-based messenger and bot with which to interact with the IoT shadow.
+|c|iotp_coachdb   |y      | -      | a No-SQL db underlying the events, if history of the events are required for further analysis.
+|d|iotp_HomeKit   |y      | v0.0.7 |Less of a framework to run Apple's HomeKit.
+|e|iotp_mqtt      |y      | v1.0.0 |A broker.
+|f|menu_ansible   |not yet| v0.0.5 |A menu system with which to drive Ansible, which which the management of the system is done.
+
+### Node-RED flows
+|#| Node-RED Flows required |In Container|
+|-|-------------------------|------------|
+|1|node-red-dashboard       |a|
+
+### Installation Pre-Requisites
+
+|#|Pre-Req | Containers|a|b|c|d|e|
+|-|--------|-----------|-|-|-|-|-|
+|1|Ansible |           |y|y|y|y|y|
+|2|Docker  |           |y|y|y|y|y|
+|3|github  |           |y|y|y|y|y|
+|4|Node-RED|           |y|y|n|y|y|
+|5|Telegram|           |n|y|n|n|n|  
+
+</details>
+
+## D. Deeper Understanding
+
+
+### Instructions for Pub-Sub between dig2 Services.
+
+<details>
+    <summary>Expand for examples of Pub-Sub services</summary>
+
 
 |# | From            | To              |Example mqtt Topic            |Data Payload Ex.    | Description          |
 |--|---------------- |-----------------|------------------------------|--------------------|----------------------|
@@ -272,10 +316,15 @@ Meaning of Columns with which to define a severity rule:
 |6 |iotp_dig2.Twin   |iotp_dig2Msgr    |Still to be done.|||
 
 
-## Advise for Edge Processing
+</details>
+
+### Advise for Edge Processing
 To be completed. Here we add how to setup in ESPEasy & others for dig2 to work.
 
-- ESPEasy:
+<details>
+    <summary>Expand for the assitance on configuring ESPEasy Rules, others.</summary>
+
+#### ESPEasy:
   - To add time to the json object, use **%unixtime%**, remember to x 1000 when the value comes in, to be a JS timestamp object.
   - For instance, to pubish to mqtt from ESP Rules:   
 
@@ -285,8 +334,11 @@ To be completed. Here we add how to setup in ESPEasy & others for dig2 to work.
                       timestamp:%unixtime%}
     ```
 
+#### Other?
 
-## Maintenance Status
+</details>
+
+## E. Maintenance Status
 
 ### Maintainer
 Jéan Roux, <jean@iotplay.org>
