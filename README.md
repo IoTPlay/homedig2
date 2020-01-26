@@ -18,15 +18,19 @@ For the reasons, where it fits, the framework needs, its building blocks, archit
 
 For understanding Homie, and Apple's HomeKit integration with open source [HomeBridge](https://homebridge.io), see previous section. Go to the help on the iitiating **iotpdig2** settings files, go to [Setting up Homie](docs/2_Setup_Homie.md) and [Setting up HomeBridge](docs/3_Setup_HomeBridge.md). 
 
-## D. The Code
+## D. Standard Screens
+
+The great thing of using a standard like Homie for the incoming info from devices, is that standard reports vcan now be created for all information. See some examples [docs/6_dig2_AppScreens](docs/6_dig2_AppScreens.md). 
+
+## E. The Code
 The code is not published yet, it is a Node-RED flow, implemented as a broker between devices and other platforms. We will still publish the Node-RED flows.
 
-## E. Maintenance Status
+## F. Maintenance Status
 
-### E1. Maintainer
+### F1. Maintainer
 Jéan Roux, <jean@iotplay.org>. Find a Trello board with the dev pipeline. [Trello IoTP dig2 Invite](https://trello.com/invite/b/yC1CnUMK/f45c720766ca0d44e7c28e3c00375494/iotp-dig2).
 
-### E2. Big-ticket items & Outstanding for Next releases
+### F2. Big-ticket items & Outstanding for Next releases
 
 For release notes, see [docs/5_ReleaseNotes/md](docs/5_ReleaseNotes/md). 
 
