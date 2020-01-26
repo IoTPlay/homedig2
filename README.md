@@ -20,10 +20,10 @@ For understanding Homie, and Apple's HomeKit integration with open source [HomeB
 
 ## D. Maintenance Status
 
-### E1. Maintainer
+### D1. Maintainer
 Jéan Roux, <jean@iotplay.org>. Find a Trello board with the dev pipeline. [Trello IoTP dig2 Invite](https://trello.com/invite/b/yC1CnUMK/f45c720766ca0d44e7c28e3c00375494/iotp-dig2).
 
-### E2. Big-ticket items & Outstanding for Next releases
+### D2. Big-ticket items & Outstanding for Next releases
 
 For release notes, see [docs/5_ReleaseNotes/md](docs/5_ReleaseNotes/md). 
 
