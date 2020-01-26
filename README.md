@@ -16,7 +16,7 @@ For the reasons, where it fits, the framework needs, its building blocks, archit
 
 ## C. Setting up the initiating files.
 
-Go to the help on the iitiating settings files, go to [Setting up Homie](/docs/2_Setup_Homie.md) and [Setting up Homebride - Apple Homekit](docs/3_Setup_HomeBridge). 
+Go to the help on the iitiating settings files, go to [Setting up Homie](docs/2_Setup_Homie.md) and [Setting up Homebride - Apple Homekit](docs/3_Setup_HomeBridge). 
 
 ## D. Maintenance Status
 
