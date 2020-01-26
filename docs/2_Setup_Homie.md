@@ -153,7 +153,7 @@ transformDeviceToHomeBridge:
 After you made changes to your setup files, the steps to get the dig2Twin to accept them. Changes are made from the Setup screen.   
 
 
-![Setup Screen](images/dig_2setup.png)   
+![Setup Screen](images/dig2_setup.png)   
 
 
 * * *
