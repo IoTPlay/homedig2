@@ -29,11 +29,11 @@ For release notes, see [docs/5_ReleaseNotes/md](docs/5_ReleaseNotes/md).
 
 1. Completed from previous release:
 
-  a) **Self-Discovery of Devices & Things**. Completed this release. ~ "We will use the Homie mqtt self-discovery standard. [Homie - An MQTT Convention for IoT/M2M](https://homieiot.github.io). "
+    * **Self-Discovery of Devices & Things**. Completed this release. ~ "We will use the Homie mqtt self-discovery standard. [Homie - An MQTT Convention for IoT/M2M](https://homieiot.github.io). "
 
-  b) **Registry yaml** - in HomeKit - the `service` must be an array of required services, not just one service. Homie standars solves this !
+    * **Registry yaml** - in HomeKit - the `service` must be an array of required services, not just one service. Homie standars solves this !
 
-  c) Make it **Multi Client** so that the same framework can be hosted centrally for different clients? Solved.
+    * Make it **Multi Client** so that the same framework can be hosted centrally for different clients? Solved.
 
 2. **dig2Msgr** using Telegram not completed yet.
 
