@@ -32,118 +32,73 @@ Back to [README](../README.md) at root of the Repo.
 
 ### The Settings Files 
 
-#### 1. Setting up your dig2 twin with <homieClientSetup.yml>
+#### 1. Setting up your dig2 twin with <homeBridge_Setup.yml>
 
-A yaml file, with which to create all the attributes in the `dig2 digital twin` about your devices. Each line is transferred into an MQTT message, and sent into the `dig2Homie` engine, to build the digital twin. This is a once-off event, or as you want to make changes.
+A yaml file, with which to create is sent as an MQTT message into the HomeBridge docker service, which then createthe Apple HomeKit devices. The Things here must be aligned to the things created in the `dig2Homie` engine, where the MQTT standard is used, on this side, '/' is replaced with '.'. The `iotpdig2` engine will then be able to update the status of the `HomeBridge` created device, if the notations are followed.
 
-Actioning the changes you made to this file, is done from the **Setup* screen, * 
+Actioning the changes you made to this file, is done from the **Setup* screen, see below. 
 
 ``` yaml
 ---
 
-# -------- Additional home Details ----------------------------------   
-homieClientSetup:
+#homebridgeSetup: # Apple Homekit
+---
+#Add as controller to Hombridge through MQTT queue homebridge/to/add: 
 
-  # Device Names <$name>---------------------------------------------    
-    homie/ESP62/$name:                  Sprinkler System & Outside Air
+- name:             ESP62.Air.Temperature
+  service_name:     Quad Temperature
+  service:          TemperatureSensor
+  manufacturer:     IoTPlay
+  serialnumber:     ESP62.Air.Temperature
 
-  # Devices Mac Addresses <$mac>-------------------------------------
-    homie/ESP62/$mac:                   "18:fe:34:cf:54:26"
+- name:             ESP72.Light.Switch
+  service_name:     Outside Kitchen
+  service:          Lightbulb
+  manufacturer:     Sonoff
+  model:            Basic
+  serialnumber:     ESP72.Light.Switch
+  firmwarerevision: ESP_Easy mega-20181112
 
-  # Devices IP Addressses <$localip>---------------------------------
-    homie/ESP62/$localip:                 192.168.1.42
+- name:             shelly1-93EA75.relay.Light
+  service_name:     Outside Braai
+  service:          Lightbulb
+  manufacturer:     Shelly
+  model:            One
+  serialnumber:     shelly1-93EA75.relay.Light 
 
-  # Device Implementations <$implementation>-------------------------
-    homie/ESP62/$implementation:         ESP_Easy
+- name:             Paradox.Zone.Landing_PIR
+  service_name:     Landing PIR
+  service:          MotionSensor
+  manufacturer:     Paradox
+  serialnumber:     Paradox.Zone.Landing_PIR   
 
-  # Node Names <$name>-----------------------------------------------
-    homie/ESP62/Air/$name:               Kitchen Quad Air
+- name:             ESP62.Leg1.Relay
+  service_name:     Sprinkler Leg1
+  service:          Valve
+  manufacturer:     IoTPlay
+  model:            4 sprinkler beta
+  serialnumber:     ESP62.Leg1.Relay
+  #ValveType:        1
 
-  # Attribute Properties: Unit <$unit>------------------------------- 
-    homie/ESP62/Air/Temperature/$unit:   "°C"
-    homie/ESP62/Air/Humidity/$unit:      "%"
-    homie/ESP62/Leg1/Relay/$unit:        "on/off"
 
-  # Attribute Properties: settable? <$settable>----------------------
-    homie/ESP71/Light/Switch/$settable:  true
-
-  # Attribute Properties: Names of Thing Property <$name>------------
-    homie/ESP62/Leg1/Relay/$name:        Sprinkler Leg-1
-
-  # How to talk back to Devices with MQTT <$mqttToDevice> -----------
-    homie/ESP71/Light/Switch/$mqttToDevice:    espeasy/ESP71/gpio/12
+- name:             ESP62.Vars.Auto
+  service_name:     Sprinklers Auto
+  service:          Switch
+  manufacturer:     IoTPlay
+  serialnumber:     ESP62.Vars.Auto
+  model:            4 sprinkler beta
 
 ```
 
 
-#### 2. homieTransforms.yml 
+#### 2. Removing Thing objects from HomeBridge.  <homeBridge_Remove.yml> 
 
-A yaml file, which transforms incoming MQTT messages from devices, and transforms them to make them [homie standard](https://homieiot.github.io) compliant.
+A yaml file, with items to be removed.
 
 ``` yaml
 
 ---
-
-transformToHomieTopic: # fromDevice
-# instructions: If payload_from must go as-is to payload_to, do not map, else map in equal length array.
-# example:
-#      payload_from: [true,false]
-#      payload_to  : [ready,lost]
-
-    - shellies/shelly1-058DDF/online:
-        payload_from: [true,false]
-        payload_to  : [ready,lost]
-        mqtt_to     : homie/shelly1-058DDF/$state
-
-    - "Paradox/Zone/TV-Room_PIR":
-        payload_from: [CLOSED,OPEN]
-        payload_to  : [false,true]
-        mqtt_to     : "homie/Paradox/Zone/TV-Room_PIR"
-
-transformHomeBridgeToDevice: #after converted by function with same name...
-
-    - homie/ESP62/Leg1/Relay/set: 
-        payload_from: [1,0]
-        payload_to  : ["event,L1","event,allsprinkleroff"]
-        mqtt_to     : espeasy/ESP62/cmd
-
-    - homie/shelly1-24D051/relay/Light/set: 
-        payload_from: [true,false]
-        payload_to  : ["on","off"]
-        mqtt_to     : shellies/shelly1-24D051/relay/0/command
-
-#----- Known do not use ----------
-    - home/OpenMQTTGateway/version:
-        mqtt_to     : homie/ziotp/knowndoNotUse
-
-transformJSONtoHomie:
-# jsonInEx means: Example incoming json
-    - home/OpenMQTTGateway/SYStoMQTT:
-        jsonInEx    : {"uptime":7472,"freeMem":42560,"rssi":-42,"SSID":"TheStorm","modules":"SRFB"}
-        mqtt_to     : [
-                        homie/OpenMQTTGateway/$stats/uptime,
-                        homie/OpenMQTTGateway/$stats/signal,
-                        homie/OpenMQTTGateway/$stats/freeheap,
-                        ]
-        json_in     : [
-                        uptime,
-                        rssi,
-                        freeMem
-                        ]
-
-# ----- TODO -----------
-notMappedYet:
-    -  home/OpenMQTTGateway/version: (must go to /$fw/version)
-
-# ==================================================
-transformDeviceToHomeBridge:
-# not working, one msg should be able to go to 2 msg's, thus rather take msg's to ESP rules.
-#    - espeasy/ESP62/Leg1/Relay:
-#        payload_from: ["0","1"]
-#        payload_to  : [{"name":"ESP62.Leg1.Relay","characteristic":"InUse","value":0},{"name":"ESP62.Leg1.Relay","characteristic":"InUse","value":1}]
-#        mqtt_to     : homebridge/to/set
-
-# ========= from HomeBridge to Device ==============
+- name: ESP62.Switch.Auto
 
 ```
 
@@ -154,7 +109,7 @@ transformDeviceToHomeBridge:
 After you made changes to your setup files, the steps to get the dig2Twin to accept them. Changes are made from the Setup screen.   
 
 
-![Setup Screen](images/dig_2setup.png)   
+![Setup Screen](images/dig2_setup.png)   
 
 
 * * *
