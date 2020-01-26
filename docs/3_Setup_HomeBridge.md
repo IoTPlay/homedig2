@@ -1,3 +1,5 @@
+Back to [README](../README.md) at root of the Repo. 
+
 
 # For HomeBridge : Understanding the Settings of dig2  
 
