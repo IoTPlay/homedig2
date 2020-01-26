@@ -1,4 +1,4 @@
-# iotp_dig2
+# iotp_dig2 v.0.2 - the Homie aligned version
 
 A framework which creates a 'digital twin' representation of a home, and reduces the complexities of running the full solution.
 
