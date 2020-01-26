@@ -1,5 +1,5 @@
 
-# Understanding the Settings of dig2  
+# For Homie: Understanding the Settings of dig2  
 
 
 **About the folder structure - MyHome, and others** .   
