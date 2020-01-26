@@ -24,8 +24,11 @@ For understanding Homie, and Apple's HomeKit integration with open source [HomeB
 Jéan Roux, <jean@iotplay.org>. Find a Trello board with the dev pipeline. [Trello IoTP dig2 Invite](https://trello.com/invite/b/yC1CnUMK/f45c720766ca0d44e7c28e3c00375494/iotp-dig2).
 
 ### E2. Big-ticket items & Outstanding for Next releases
+
+For release notes, see [docs/5_ReleaseNotes/md](docs/5_ReleaseNotes/md). 
+
 1. Self-Discovery of Devices & Things.
-  We will use the Homie mqtt self-discovery standard. [Homie - An MQTT Convention for IoT/M2M](https://homieiot.github.io).
+  Completed this release. ~ "We will use the Homie mqtt self-discovery standard. [Homie - An MQTT Convention for IoT/M2M](https://homieiot.github.io). "
 
 2. **dig2Msgr** using Telegram not completed yet.
 

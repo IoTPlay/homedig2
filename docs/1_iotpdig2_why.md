@@ -1,3 +1,8 @@
+* * *
+Back to [README](../README.md) at root of the Repo. 
+* * *
+ 
+
 # iotp_dig2 v.0.2 - the Homie aligned version
 
 A framework which creates a 'digital twin' representation of a home, and reduces the complexities of running the full solution. This version have been upgraded to work with the [MQTT open source Homie](https://homieiot.github.io) standard.
@@ -138,3 +143,8 @@ To be completed. Here we add how to setup in ESPEasy & others for dig2 to work.
 </details>
 
 
+
+* * *
+Back to [README](../README.md) at root of the Repo. 
+* * *
+ 

@@ -1,6 +1,7 @@
+* * *
 Back to [README](../README.md) at root of the Repo. 
-
-
+* * *
+ 
 # For HomeBridge : Understanding the Settings of dig2  
 
 
@@ -156,3 +157,7 @@ After you made changes to your setup files, the steps to get the dig2Twin to acc
 ![Setup Screen](images/dig_2setup.png)   
 
 
+* * *
+Back to [README](../README.md) at root of the Repo. 
+* * *
+ 

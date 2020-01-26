@@ -1,6 +1,8 @@
-
+* * *
+Back to [README](../README.md) at root of the Repo. 
+* * *
+ 
 # For Homie: Understanding the Settings of dig2  
-
 
 **About the folder structure - MyHome, and others** .   
 
@@ -154,3 +156,7 @@ After you made changes to your setup files, the steps to get the dig2Twin to acc
 ![Setup Screen](images/dig_2setup.png)   
 
 
+* * *
+Back to [README](../README.md) at root of the Repo. 
+* * *
+ 
