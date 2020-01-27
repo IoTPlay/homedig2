@@ -16,8 +16,8 @@ Back to [README](../README.md) at root of the Repo.
 
 
 ### Folders Locations
-- `/opt/iotplay/myh_dig2/projects/Prod` : The folder where dig2 Node-RED flows will install, instance Production.
-- `/opt/iotplay/myh_dig2/iotp.conf`     : The settings for the house <myh>. 
+- `/opt/iotplay/homedig2/projects/Prod` : The folder where dig2 Node-RED flows will install, instance Production.
+- `/opt/iotplay/homedig2/iotp.conf`     : The settings for the house <myh>. 
 
 ### The File names  
 

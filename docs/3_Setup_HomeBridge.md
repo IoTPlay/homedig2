@@ -17,8 +17,8 @@ Back to [README](../README.md) at root of the Repo.
 
 
 ### Folders Locations
-- `/opt/iotplay/myh_dig2/projects/Prod` : The folder where dig2 Node-RED flows will install, instance Production.
-- `/opt/iotplay/myh_dig2/iotp.conf`     : The settings for the house <myh>. 
+- `/opt/iotplay/homedig2/projects/Prod` : The folder where dig2 Node-RED flows will install, instance Production.
+- `/opt/iotplay/homedig2/iotp.conf`     : The settings for the house <myh>. 
 
 ### The File names  
 
@@ -34,7 +34,7 @@ Back to [README](../README.md) at root of the Repo.
 
 #### 1. Setting up your dig2 twin with <homeBridge_Setup.yml>
 
-A yaml file, with which to create is sent as an MQTT message into the HomeBridge docker service, which then createthe Apple HomeKit devices. The Things here must be aligned to the things created in the `dig2Homie` engine, where the MQTT standard is used, on this side, '/' is replaced with '.'. The `iotpdig2` engine will then be able to update the status of the `HomeBridge` created device, if the notations are followed.
+A yaml file, with which to create is sent as an MQTT message into the HomeBridge docker service, which then createthe Apple HomeKit devices. The Things here must be aligned to the things created in the `dig2Homie` engine, where the MQTT standard is used, on this side, '/' is replaced with '.'. The `homedig2` engine will then be able to update the status of the `HomeBridge` created device, if the notations are followed.
 
 Actioning the changes you made to this file, is done from the **Setup* screen, see below. 
 

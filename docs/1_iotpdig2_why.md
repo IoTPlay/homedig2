@@ -3,7 +3,7 @@ Back to [README](../README.md) at root of the Repo.
 * * *
  
 
-# iotp_dig2 v.0.2 - the Homie aligned version
+# homedig2 v.0.2 - the Homie aligned version
 
 A framework which creates a 'digital twin' representation of a home, and reduces the complexities of running the full solution. This version have been upgraded to work with the [MQTT open source Homie](https://homieiot.github.io) standard.
 
@@ -42,7 +42,7 @@ Other solutions can now be 'plugged-in' as well, we are working on a `Messenger`
 </details>
    
 
-### A4. iotpdig2 works with setup files. What does the settings do and Why?
+### A4. homedig2 works with setup files. What does the settings do and Why?
 
 #### The Problem
 
@@ -65,10 +65,10 @@ See the architecture below:
 
 
 
-### B1. Building Block functions of iotp_dig2
+### B1. Building Block functions of homedig2
 
 <details>
-    <summary>Expand for the The iotp_dig2 function Building blocks. </summary>
+    <summary>Expand for the The homedig2 function Building blocks. </summary>
 
 ```
 1. Application Settings:   
@@ -82,7 +82,7 @@ See the architecture below:
    c. Others
 
 3. Broker:
-   a. to dig2, from controllers (Using the `dig2 iotp` protocol):
+   a. to dig2, from controllers (Using the `homie` protocol):
       i. Shelly
      ii. espeasy
    b. to controllers, from:
@@ -133,7 +133,7 @@ To be completed. Here we add how to setup in ESPEasy & others for dig2 to work.
   - For instance, to pubish to mqtt from ESP Rules:   
 
     ```
-    Publish iotpDig2,{regId:"Gat-1",
+    Publish homedig2,{regId:"Gat-1",
                       val:{CurrentDoorState:1},
                       timestamp:%unixtime%}
     ```

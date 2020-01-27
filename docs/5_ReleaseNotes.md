@@ -171,7 +171,7 @@ not done:
 
 ### Dev: 17 Apr 23:35
 - Added cfg_vars.eventsToDig2Twin false / true. // for controlling if events should be sent to dig2Twin, in Broker.
-    - Events from Shellies, ESPEasy, iotpDig2 controlled with cfg_vars.eventsToDig2Twin.
+    - Events from Shellies, ESPEasy, homedig2 controlled with cfg_vars.eventsToDig2Twin.
 - Added eventsToDig2Twin control from dig2Iotp events stream to HomeKit in Broker.
 
 ### Dev to Bitbucket 14 Apr 19 15:36 gmt+2:
