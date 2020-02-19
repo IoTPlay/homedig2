@@ -9,7 +9,7 @@ Back to [README](../README.md) at root of the Repo.
 
 See below an interaction diagram, which represents the Nore-RED flows and how the components interacts with one another.  
 
-![Interaction Diagram](/images/dig2_interactionDiagram.png)    
+![Interaction Diagram](https://github.com/IoTPlay/homedig2/blob/master/docs/images/dig2_InteractionDiagram.png)    
 
 
 |No  | Description |
