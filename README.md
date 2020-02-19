@@ -16,7 +16,7 @@ For the reasons, where it fits, the framework needs, its building blocks, archit
 
 See building blocks interaction diagram below, and a discussion document on it [docs/1_homedig2_how.md](docs/1_homedig2_how.md).   
 
-![Interaction Diagram](docs/images/dig2_InteractionDiagram.png)   
+![Interaction Diagram](https://github.com/IoTPlay/homedig2/blob/master/docs/images/dig2_InteractionDiagram.png)   
 
 
 ## C. Setting up the initiating files.

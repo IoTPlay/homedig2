@@ -61,7 +61,7 @@ Other solutions can now be 'plugged-in' as well, we are working on a `Messenger`
 
 See the architecture below:
 
-![The dig2 Architecture](docs/images/dig2_Architecture.png)
+![The dig2 Architecture](https://github.com/IoTPlay/homedig2/blob/master/docs/images/dig2_Architecture.png)   
 
 
 

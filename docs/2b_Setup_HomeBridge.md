@@ -109,7 +109,7 @@ A yaml file, with items to be removed.
 After you made changes to your setup files, the steps to get the dig2Twin to accept them. Changes are made from the Setup screen.   
 
 
-![Setup Screen](docs/images/dig2_setup.png)   
+![Setup Screen](https://github.com/IoTPlay/homedig2/blob/master/docs/images/dig2_setup.png)   
 
 
 * * *

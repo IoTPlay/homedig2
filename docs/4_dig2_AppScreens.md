@@ -9,13 +9,13 @@ Devices, with their attributes, and statusses are pushed to the standard reports
 
 See example reports: 
 
-![Thing Properties](docs/images/dig2_ThingProperties.png)   
+![Thing Properties](https://github.com/IoTPlay/homedig2/blob/master/docs/images/dig2_ThingProperties.png)   
 
-![Things Shadow](docs/images/dig2_ThingsShadow.png)   
+![Things Shadow](https://github.com/IoTPlay/homedig2/blob/master/docs/images/dig2_ThingsShadow.png)   
 
-![Thing Status](docs/images/dig2_ThingsStatus.png)   
+![Thing Status](https://github.com/IoTPlay/homedig2/blob/master/docs/images/dig2_ThingsStatus.png)   
 
-![Homie Devices](docs/images/dig2_HomieDevices.png)   
+![Homie Devices](https://github.com/IoTPlay/homedig2/blob/master/docs/images/dig2_HomieDevices.png)   
 
 
 
