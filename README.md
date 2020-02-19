@@ -16,7 +16,7 @@ For the reasons, where it fits, the framework needs, its building blocks, archit
 
 See building blocks interaction diagram below, and a discussion document on it [docs/1_homedig2_how.md](docs/1_homedig2_how.md).   
 
-![Interaction Diagram](docs/images/dig2_interactionDiagram.png)   
+[Interaction Diagram](docs/images/dig2_interactionDiagram.png)   
 
 
 ## C. Setting up the initiating files.
