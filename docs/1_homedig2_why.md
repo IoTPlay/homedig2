@@ -121,29 +121,6 @@ See the architecture below:
 </details>
 
 
-
-### D2. Advise for Edge Processing
-To be completed. Here we add how to setup in ESPEasy & others for dig2 to work.
-
-<details>
-    <summary>Expand for the assitance on configuring ESPEasy Rules, others.</summary>
-
-#### ESPEasy:
-  - To add time to the json object, use **%unixtime%**, remember to x 1000 when the value comes in, to be a JS timestamp object.
-  - For instance, to pubish to mqtt from ESP Rules:   
-
-    ```
-    Publish homedig2,{regId:"Gat-1",
-                      val:{CurrentDoorState:1},
-                      timestamp:%unixtime%}
-    ```
-
-#### Other?
-
-</details>
-
-
-
 * * *
 Back to [README](../README.md) at root of the Repo. 
 * * *

@@ -15,6 +15,7 @@ Back to [README](../README.md) at root of the Repo.
 - NOT COMPLETED.
 
 ### Dev 24 Sep'19
+- **Self-Discovery of Devices & Things**. Completed this release. ~ "We will use the Homie mqtt self-discovery standard. [Homie - An MQTT Convention for IoT/M2M](https://homieiot.github.io). "
 - Added transform rules device to homeBridge
 - Added homeBridge translator & setup file
 - Added homeBridge to homie .../set directive --> to device /cmd for ESP and /command for shelly
