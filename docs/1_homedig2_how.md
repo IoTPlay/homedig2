@@ -3,14 +3,14 @@ Back to [README](../README.md) at root of the Repo.
 * * *
  
 
-# homedig2 v.0.2 - the Homie aligned version
+# homedig2 v.0.21 - the Homie aligned version
 
 ## A. How the system works
 
 See below an interaction diagram, which represents the Nore-RED flows and how the components interacts with one another.  
 
 
-![Interaction Diagram](images/dig2_interactionDiagram.png)    
+![Interaction Diagram](docs/images/dig2_interactionDiagram.png)    
 
 |No  | Description |
 |----|-------------|
