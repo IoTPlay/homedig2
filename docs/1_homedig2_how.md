@@ -9,8 +9,8 @@ Back to [README](../README.md) at root of the Repo.
 
 See below an interaction diagram, which represents the Nore-RED flows and how the components interacts with one another.  
 
-
 ![Interaction Diagram](docs/images/dig2_interactionDiagram.png)    
+
 
 |No  | Description |
 |----|-------------|

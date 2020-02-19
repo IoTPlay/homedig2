@@ -9,13 +9,13 @@ Devices, with their attributes, and statusses are pushed to the standard reports
 
 See example reports: 
 
-![Thing Properties](images/dig2_ThingProperties.png)   
+![Thing Properties](docs/images/dig2_ThingProperties.png)   
 
-![Things Shadow](images/dig2_ThingsShadow.png)   
+![Things Shadow](docs/images/dig2_ThingsShadow.png)   
 
-![Thing Status](images/dig2_ThingsStatus.png)   
+![Thing Status](docs/images/dig2_ThingsStatus.png)   
 
-![Homie Devices](images/dig2_HomieDevices.png)   
+![Homie Devices](docs/images/dig2_HomieDevices.png)   
 
 
 
