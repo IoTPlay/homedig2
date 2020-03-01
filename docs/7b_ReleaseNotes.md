@@ -1,8 +1,12 @@
 * * *
 Back to [README](../README.md) at root of the Repo. 
 * * *
- 
-### Version dig2home_v020
+
+### Dev 01 Mar'20 
+- New Docker container only to hande reporting configured in Ansible Service, container name `home_dig2bi_1` - all reporting to be moved here.
+- Added web services end points at /dig2/devices and /dig2/nodepropvals - accessable on the url:port of the base service. (Must still add security)
+
+### Version dig2home_v020 priot to end Jan 2020
 - This version is prior to the breakup of flows to Containers. It does Homie. Hossted on Bitbucket.
 
 ### Dev 25 Jan '20

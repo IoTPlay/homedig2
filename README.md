@@ -1,18 +1,18 @@
 # homedig2 v.0.21 - the Homie aligned version.
 
-A framework which creates a 'digital twin' representation of a home, and reduces the complexities of running the full solution. This version have been upgraded to work with the [MQTT open source Homie](https://homieiot.github.io) standard.
+A framework that creates a 'digital twin' representation of a home, and reduces the complexities of hand-crafting your own home automation solution (on Node-RED). This version has been upgraded to work with the [MQTT open source Homie](https://homieiot.github.io) standard, which was born from the frustration of interoperability, and service discovery in the open source home automation community.
 
 ## A. The purpose of homedig2 & the Homie standard.
 
-The Purpose of `homedig2` is to make a non-homie standard comply to homie compliant settings of the messages, in order to have a *digital twin* stored for your house's device & attribute states, for standardised reporting, and interaction with other platforms, like message-based apps.    
+The Purpose of `homedig2` is to make a non-homie standard IoT devices comply to homie compliant settings of the messages, in order to have a *digital twin* stored for your house's device & attribute states, for standardised reporting, and interaction with other platforms, like message-based apps.    
 
-The `homedig2` platform, or `dig2` for short, stanrdizes the messages from your home non-homie comliant devices, stores all the messages as a `digital twin`, and interacts with other platforms.    
+The `homedig2` platform, or `dig2` for short, standardizes the messages from your home non-homie comliant devices, stores all the messages into a `digital twin` of the attribute states, and interacts with other platforms.    
 
 One platform built into dig2 is [HomeBridge](https://homebridge.io), an opensource platform for projecting your house onto [Apple's Home](https://www.apple.com/ca/ios/home/) application. 
 
-## B. Why we built it, and How it Works.
+## B. Why we built it, and how it works.
 
-For the reasons, where it fits, the framework needs, its building blocks, architecture, the putpose of using the Homie standard - problerm and solution, how this will change edge processing, see the readme file [docs/1_homedig2_why.md](docs/1_homedig2_why.md). 
+In the link below we cover the reasons, where the solution fits, the framework needs, its building blocks, architecture, the purpose of using the Homie standard - the problem it tries to solve, and the solution, how this solution will change edge processing, see the readme file [docs/1_homedig2_why.md](docs/1_homedig2_why.md). 
 
 See building blocks interaction diagram below, and a discussion document on it [docs/1_homedig2_how.md](docs/1_homedig2_how.md).   
 

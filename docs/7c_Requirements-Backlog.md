@@ -1,6 +1,6 @@
 # Next Release to RouxHome Prod:
 
-### Working On:
+## Working On:
 
 - NEXT:
 
@@ -11,7 +11,22 @@
             - via translator transformRules.yml 
 
 
-### Backlog Todo's
+## Smaller Improvements to be done    
+
+|No| Summary  | Details |
+|--|----------|---------|
+|1.|**homedig2 to enable shelly CoaP** | Instead of using mqtt, which dis-enables that device's use on the http://my.shelly.cloud app; also provide a framework option to rather use the shelly CoaP capability, to both actuate and read statusses off the devices, instead of mqtt, (most components exists). |
+|2.|**Reporting http endpoints** | Rather than only our own Dashboard - make the reports available as http endpoints, for the user to build reports in other tools. |
+
+
+* * *   
+## Big-ticket items & Improvements for future releases  
+
+Big-ticket future building blocks like the **rules engine**, and the **homedigMsgr**, still to be refactored from previous releases.
+
+
+
+## Backlog Todo's
 
 - **backlog**: 
     - clean up sheet old "Broker" - remove & deprecate old stuff
