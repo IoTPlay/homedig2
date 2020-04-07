@@ -44,5 +44,12 @@ The code is not published yet, it is a Node-RED flow, implemented as a broker be
     a. **dig2Msgr** using Telegram not completed yet. We have draft system working here.   
     b. **Rules Engine** not completed yet. Previous versions had working models.
 
+## H. Credits
+
+- The fantastic community at https://discourse.nodered.org for all the help.
+
+- For the ideas and subflow on having a syslog front-end, from Chris in Berlin https://github.com/Christian-Me/node-red-contrib-home/tree/master/Node-RED/syslog
+
+
 
 
