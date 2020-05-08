@@ -2,6 +2,10 @@
 Back to [README](../README.md) at root of the Repo. 
 * * *
 
+### Dev 08 May '20
+- Added ServiceUp with config file to do periodic check if a services is up, and report to homie storage
+- added mechansisms with config file to call CoAP periodically to read .json from an http endpoint
+
 ### Dev 01 Mar'20 
 - New Docker container only to hande reporting configured in Ansible Service, container name `home_dig2bi_1` - all reporting to be moved here.
 - Added web services end points at /dig2/devices and /dig2/nodepropvals - accessable on the url:port of the base service. (Must still add security)
