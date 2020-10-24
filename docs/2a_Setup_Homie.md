@@ -110,6 +110,23 @@ transformHomeBridgeToDevice: #after converted by function with same name...
         payload_from: [true,false]
         payload_to  : ["on","off"]
         mqtt_to     : shellies/shelly1-24D051/relay/0/command
+ 
+ CoAPSetup:                   #___ to trigger CoAP services for information, like shelly_EM
+    # To interact with a CoAP or http service, rather than with mqtt. All received infos to be converted to homie format.
+    # expression: How often to fire the event. Use adapted 'cron'
+    # Supported expressions are: https://github.com/jaclarke/cronosjs#supported-expression-syntax 
+    #
+    #   -  "*/2 * * * *" - every 2 min
+    #   -  "0/10 * * * * *" = every 10 seconds
+    #
+
+    - CoAPout/shellyem-B9F209/emeter/0:
+        endpoint:  http://shellyem-B9F209.iot.lan/emeter/0      # The CoaP endpoint
+        formatRec: json                                # what format is endpoint supplying info
+        expression: "0/10 * * * * *"                             
+        #limit: 1                                      # How many times to fire the event.
+        #jsonInEx:  {"power":7.52,"reactive":-24.11,"voltage":245.85,"is_valid":true,"total":549042.9,"total_returned":8920.5} #example info in.
+
 
 #----- Known do not use ----------
     - home/OpenMQTTGateway/version:
