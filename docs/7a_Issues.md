@@ -25,3 +25,14 @@ This page describes Open Issues, Smaller improvements to be done, and further bi
 ## Closed Issues      
 
 Moved to [5_ReleaseNotes](7b_ReleaseNotes.md).   
+
+## Errors and how to Resolve them
+
+1. Message `{"undefined":"19.2A"}` from Victron Admin panel.
+
+
+
+* * *
+Back to [README](../README.md) at root of the Repo. 
+* * *
+ 
